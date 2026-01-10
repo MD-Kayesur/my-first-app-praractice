@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {"name":"Debug Android Hermes","request":"launch","type":"reactnativedirect","cwd":"${workspaceFolder}","platform":"android"},
+       
+        
+        {
+            "type": "node-terminal",
+            "name": "Run Script: start",
+            "request": "launch",
+            "command": "npm run start",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
