@@ -1,58 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet,Image,TouchableWithoutFeedback, TouchableOpacity, Text, View,Button } from 'react-native';
-import { useDimensions,useDeviceOrientation } from '@react-native-community/hooks';
-// import { StyleSheet, Text, View, Button } from 'react-native';
-export default function App() {
-    
-  return (
- <View
-  style={{
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'yellow',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-      flexShrink:1,
-  }}
->
-  <View
-    style={{
-      width: 100,
-      height: 100,
-      backgroundColor: 'green',
-      justifyContent: 'center',
-      alignItems: 'center',
-    
-    }}
-  />
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './app/screens/LoginScreen';
+import SignupScreen from './app/screens/SignupScreen';
 
-  <View
-    style={{
-      width: 120,
-      height: 100,
-      backgroundColor: 'black',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}
-  />
-  <View
-    style={{
-      width: 120,
-      height: 100,
-      backgroundColor: 'red',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}
-  />
-   
  
+const Stack = createNativeStackNavigator();
 
-  <StatusBar style="auto" />
-</View>
-
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Signup" component={SignupScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
- 
-   
- 
